@@ -146,14 +146,15 @@ setup = {
     },
     "requests" : 0,
     "timeout" : time.time() + 10,
+    "pinssetup" : 0,
 }
 
 units = {'memory' : [ 'B', 'KB', 'MB', 'GB' ]}
 
-pins = { 'valve' : 4, 'lights' : 3, 'door' : 2, 'pumps' : 17, 'pump flow' : 8 }
+#pins = { 'valve' : 4, 'lights' : 3, 'door' : 2, 'pumps' : 17, 'pump flow' : 8 }
 
-TRIGGER_PINS = [15, 14] # left, right
-ECHO_PINS = [22, 27] # left, right
+#TRIGGER_PINS = [15, 14] # left, right
+#ECHO_PINS = [22, 27] # left, right
 compensation = -10 # -11
 RADIUS = 29
 
