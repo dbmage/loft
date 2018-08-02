@@ -18,6 +18,7 @@ GPIO.setmode(GPIO.BCM)
 #GPIO.setwarnings(False)
 
 for id in cfg.setup['pins']:
+    print(cfg.setup['pins'][id]['Configured'])
     if cfg.setup['pins'][id]['Configured'] == True:
         continue
     
@@ -40,6 +41,7 @@ for id in cfg.setup['pins']:
     print("Setting up %s to %s mode" % (pin, cfg.setup['modes'][mode]))
     GPIO.setup(pin, mode)
     cfg.setup['pins'][id]['Configured'] == True
+    print(cfg.setup['pins'][id]['Configured'])
 
 def getstate( relay ):
     pin = cfg.pins[relay]
