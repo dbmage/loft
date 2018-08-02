@@ -19,7 +19,7 @@ GPIO.setmode(GPIO.BCM)
 for id in cfg.setup['pins']:
     pin = cfg.setup['pins'][id]['BCM']
     mode = cfg.setup['pins'][id]['Mode']
-    use = cfg.setup['pins'][id]['use']
+    use = cfg.setup['pins'][id]['Use']
     if use == 'left_trig':
         cfg.setup['buckets']['left']['trig'] = pin
     elif use == 'left_echo':
