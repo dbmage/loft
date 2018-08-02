@@ -135,6 +135,7 @@ setup = {
             'trig' : '',
             'echo' : '',            
         }
+    },
     "modes" : {
         0 : "GPIO.OUT",
         1 : "GPIO.IN"
