@@ -40,7 +40,7 @@ for id in cfg.setup['pins']:
         #continue
     print("Setting up %s to %s mode" % (pin, cfg.setup['modes'][mode]))
     GPIO.setup(pin, mode)
-    cfg.setup['pins'][id]['Configured'] == True
+    cfg.setup['pins'][id]['Configured'] = True
     print(cfg.setup['pins'][id]['Configured'])
 
 def getstate( relay ):
