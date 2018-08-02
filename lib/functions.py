@@ -18,12 +18,13 @@ GPIO.setmode(GPIO.BCM)
 #GPIO.setwarnings(False)
 
 for id in cfg.setup['pins']:
-    if cfg.setup['pinssetup'] > len(cfg.setup['pins']):
+    if cfg.setup['pins'][id]['Configured'] == True:
         continue
+    
     pin = cfg.setup['pins'][id]['BCM']
     mode = cfg.setup['pins'][id]['Mode']
     use = cfg.setup['pins'][id]['Use']
-    print("Pin: %s\nUse: %s\nMode: %s (%s)" % (pin, use, cfg.setup['modes'][mode], mode))
+    print("Pin: %s\tUse: %s\tMode: %s (%s)" % (pin, use, cfg.setup['modes'][mode], mode))
     if use == 'left_trig':
         cfg.setup['buckets']['left']['trig'] = pin
     elif use == 'left_echo':
@@ -38,7 +39,7 @@ for id in cfg.setup['pins']:
         #continue
     print("Setting up %s to %s mode" % (pin, cfg.setup['modes'][mode]))
     GPIO.setup(pin, mode)
-    cfg.setup['pinssetup'] += 1;
+    cfg.setup['pins'][id]['Configured'] == True
 
 def getstate( relay ):
     pin = cfg.pins[relay]
