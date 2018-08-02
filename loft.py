@@ -122,17 +122,19 @@ def FUNCTION():
 def FUNCTION(bucket):
     global requests
     requests += 1
-    levels = getbucketlevels(bucket)
-    return levels
+    if bucket not in cfg.setup['buckets']:
+        return "%s not found" % bucket
+    
+    level = getbucketlevels(cfg.setup['buckets'][bucket]['trig'], cfg.setup['buckets'][bucket]['echo'])
+    return level
 
 @route('/getlevels/')
 def FUNCTION():
     global requests
     requests += 1
     levels = {}
-    for x in [0, 1]:
-        level = getbucketlevels(x)
-        levels[x] = level
+    levels['left'] = getbucketlevels(cfg.setup['buckets']['left']['trig'], cfg.setup['buckets']['left']['echo'])
+    levels['right'] = getbucketlevels(cfg.setup['buckets']['right']['trig'], cfg.setup['buckets']['right']['echo'])
     return json.dumps(levels)
 
 @route('/getcylindertemps/')
