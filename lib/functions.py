@@ -153,8 +153,8 @@ def getbucketlevels( trigger, echo ):
 
     while GPIO.input(echo)==0:
         start = time.time()
-       if time.time() > cfg.setup['timeout']:
-           return "0"
+        if time.time() > cfg.setup['timeout']:
+            return "0"
 
     while GPIO.input(echo)==1:
         stop = time.time()
