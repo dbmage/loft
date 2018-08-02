@@ -145,6 +145,7 @@ setup = {
         "off" : 2
     },
     "requests" : 0,
+    "timeout" : time.time() + 10,
 }
 
 units = {'memory' : [ 'B', 'KB', 'MB', 'GB' ]}
@@ -155,7 +156,7 @@ TRIGGER_PINS = [15, 14] # left, right
 ECHO_PINS = [22, 27] # left, right
 compensation = -10 # -11
 RADIUS = 29
-timeout = time.time() + 30
+
 bucketheight = 47
 
 log="/var/log/bucket"
