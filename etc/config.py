@@ -16,7 +16,8 @@ setup = {
             "Wpi" : 7,
             "Mode" : 0, # 0 = out, 1 = in
             "BCM" : 4,
-            "physical" : 7,
+            "Physical" : 7,
+            "Configured" : False,
         },
         "2" : {
             "Use" : "lights",
@@ -25,7 +26,8 @@ setup = {
             "Wpi" : 9,
             "Mode" : 0,
             "BCM" : 3,
-            "physical" : 5,
+            "Physical" : 5,
+            "Configured" : False,
         },
         "3" : {
             "Use" : "door",
@@ -34,7 +36,8 @@ setup = {
             "Wpi" : 8,
             "Mode" : 0,
             "BCM" : 2,
-            "physical" : 3,
+            "Physical" : 3,
+            "Configured" : False,
         },
         "4" : {
             "Use" : "pumps",
@@ -43,7 +46,8 @@ setup = {
             "Wpi" : "0",
             "Mode" : 0,
             "BCM" : 17,
-            "physical" : 11,
+            "Physical" : 11,
+            "Configured" : False,
         },
         "5" : {
             "Use" : "pump_flow",
@@ -52,7 +56,8 @@ setup = {
             "Wpi" : 10,
             "Mode" : 0,
             "BCM" : 8,
-            "physical" : 24,
+            "Physical" : 24,
+            "Configured" : False,
         },
         "6" : {
             "Use" : "left_trig",
@@ -61,7 +66,8 @@ setup = {
             "Wpi" : 16,
             "Mode" : 0,
             "BCM" : 15,
-            "physical" : 10,
+            "Physical" : 10,
+            "Configured" : False,
         },
         "7" : {
             "Use" : "left_echo",
@@ -70,7 +76,8 @@ setup = {
             "Wpi" : 3,
             "Mode" : 1,
             "BCM" : 22,
-            "physical" : 15,
+            "Physical" : 15,
+            "Configured" : False,
         },
         "8" : {
             "Use" : "right_trig",
@@ -79,7 +86,8 @@ setup = {
             "Wpi" : 15,
             "Mode" : 0,
             "BCM" : 14,
-            "physical" : 8,
+            "Physical" : 8,
+            "Configured" : False,
         },
         "9" : {
             "Use" : "right_echo",
@@ -88,7 +96,8 @@ setup = {
             "Wpi" : 2,
             "Mode" : 1,
             "BCM" : 27,
-            "physical" : 13,
+            "Physical" : 13,
+            "Configured" : False,
         },
         
     },
