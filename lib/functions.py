@@ -19,6 +19,16 @@ GPIO.setmode(GPIO.BCM)
 for id in cfg.setup['pins']:
     pin = cfg.setup['pins'][id]['BCM']
     mode = cfg.setup['pins'][id]['Mode']
+    use = cfg.setup['pins'][id]['use']
+    if use == 'left_trig':
+        cfg.setup['buckets']['left']['trig'] = pin
+    elif use == 'left_echo':
+        cfg.setup['buckets']['left']['echo'] = pin
+    elif use == 'right_trig':
+        cfg.setup['buckets']['right']['trig'] = pin
+    elif use == 'right_echo':
+        cfg.setup['buckets']['right']['echo'] = pin
+    
     if GPIO.gpio_function(pin) == mode:
         continue
     GPIO.setup(pin, cfg.setup['modes'][mode])
@@ -160,28 +170,16 @@ def getbucketlevels( trigger, echo ):
     volume = round((((cfg.RADIUS * cfg.RADIUS) * pi) * distance) / 1000, 2)
     return str(volume)
 
-def bucketchecker( ):
+def bucketchecker():
     date = time.strftime("%d/%m/%y")
     runtime = time.strftime("%H:%M:%S")
     now = time.strftime("%M")
 
     if now % 5 != 0:
         return
-    for id in cfg.setup['pins']:
-        pin = cfg.setup['pins'][id]['BCM']
-        use = cfg.setup['pins'][id]['use']
-        if use == 'left_trig':
-            lefttrig = pin
-        elif use == 'left_echo':
-            leftecho = pin
-        elif use == 'right_trig':
-            righttrig = pin
-        elif use == 'right_echo':
-            rightecho = pin
-        
     
-    left = getbucketlevels(lefttrig, leftecho)
-    right = getbucketlevels(reighttrig, rightecho)
+    left = getbucketlevels(cfg.setup['buckets']['left']['trig'], cfg.setup['buckets']['left']['echo'])
+    right = getbucketlevels(cfg.setup['buckets']['right']['trig'], cfg.setup['buckets']['right']['echo'])
     data = "%s - %s - %s - %s" % (date, runtime, left, right)
 
     if left > 120 and right > 120:
