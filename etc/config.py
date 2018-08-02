@@ -15,7 +15,7 @@ setup = {
             "Name" : "GPIO. 7",
             "Wpi" : "7",
             "Mode" : 0, # 0 = out, 1 = in
-            "BCM" : "4",
+            "BCM" : 4,
             "physical" : "7",
         },
         "2" : {
@@ -24,7 +24,7 @@ setup = {
             "Name" : "SCL.1",
             "Wpi" : "9",
             "Mode" : 0,
-            "BCM" : "3",
+            "BCM" : 3,
             "physical" : "5",
         },
         "3" : {
@@ -33,7 +33,7 @@ setup = {
             "Name" : "SDA.1",
             "Wpi" : "8",
             "Mode" : 0,
-            "BCM" : "2",
+            "BCM" : 2,
             "physical" : "3",
         },
         "4" : {
@@ -42,7 +42,7 @@ setup = {
             "Name" : "GPIO. 0",
             "Wpi" : "0",
             "Mode" : 0,
-            "BCM" : "17",
+            "BCM" : 17,
             "physical" : "11",
         },
         "5" : {
@@ -51,7 +51,7 @@ setup = {
             "Name" : "CE0",
             "Wpi" : "10",
             "Mode" : 0,
-            "BCM" : "8",
+            "BCM" : 8,
             "physical" : "24",
         },
         "6" : {
