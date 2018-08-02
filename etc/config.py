@@ -154,7 +154,6 @@ setup = {
         "off" : 2
     },
     "requests" : 0,
-    "timeout" : time.time() + 10,
     "pinssetup" : 0,
 }
 
