@@ -122,35 +122,29 @@ def rambtomb( item ):
 #def getbucketlevels( i ):
 #    return False
 
-def getbucketlevels( i ):
+def getbucketlevels( trigger, echo ):
     global cfg
-    i = int( i )
-    GPIO_TRIGGER = cfg.TRIGGER_PINS[i]
-    GPIO_ECHO = cfg.ECHO_PINS[i]
-    # Set pins as output and input
-    GPIO.setup(GPIO_TRIGGER,GPIO.OUT)  # Trigger
-    GPIO.setup(GPIO_ECHO,GPIO.IN)      # Echo
 
     # Set trigger to False (Low)
-    GPIO.output(GPIO_TRIGGER, False)
+    GPIO.output(trigger, False)
 
     # Allow module to settle
     time.sleep(0.5)
 
     # Send 10us pulse to trigger
-    GPIO.output(GPIO_TRIGGER, True)
+    GPIO.output(trigger, True)
     time.sleep(0.00001)
 
-    GPIO.output(GPIO_TRIGGER, False)
+    GPIO.output(trigger, False)
     start = time.time()
 
-    while GPIO.input(GPIO_ECHO)==0:
+    while GPIO.input(echo)==0:
         start = time.time()
 #        if time.time() > cfg.timeout:
 #            print "Start: %s\nNow: %s\nTIMEOUT" % (start, time.time())
 #            return "0"
 
-    while GPIO.input(GPIO_ECHO)==1:
+    while GPIO.input(echo)==1:
         stop = time.time()
 
     # Calculate pulse length
@@ -166,9 +160,6 @@ def getbucketlevels( i ):
     volume = round((((cfg.RADIUS * cfg.RADIUS) * pi) * distance) / 1000, 2)
     return str(volume)
 
-#def bucketchecker( ):
-#    return False
-
 def bucketchecker( ):
     date = time.strftime("%d/%m/%y")
     runtime = time.strftime("%H:%M:%S")
@@ -176,9 +167,21 @@ def bucketchecker( ):
 
     if now % 5 != 0:
         return
-
-    left = getbucketlevels(0)
-    right = getbucketlevels(1)
+    for id in cfg.setup['pins']:
+        pin = cfg.setup['pins'][id]['BCM']
+        use = cfg.setup['pins'][id]['use']
+        if use == 'left_trig':
+            lefttrig = pin
+        else if use == 'left_echo':
+            leftecho = pin
+        else if use == 'right_trig':
+            righttrig = pin
+        else if use == 'right_echo':
+            rightecho = pin
+        
+    
+    left = getbucketlevels(lefttrig, leftecho)
+    right = getbucketlevels(reighttrig, rightecho)
     data = "%s - %s - %s - %s" % (date, runtime, left, right)
 
     if left > 120 and right > 120:
