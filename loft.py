@@ -8,6 +8,7 @@ sys.path.append('/usr/sbin/loft/bottle/lib')
 from functions import *
 
 requests = 0
+pinSetup()
 
 @route('/')
 def FUNCTION():
@@ -152,6 +153,5 @@ def FUNCTION():
     temp2 = getSensorReading(cfg.setup['sensors']['bucket2'])
     temps = (temp1, temp2)
     return json.dumps(temps)
-
 
 run(host='192.168.0.101', port=5000, debug=True, reloader=True)
