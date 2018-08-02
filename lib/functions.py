@@ -172,11 +172,11 @@ def bucketchecker( ):
         use = cfg.setup['pins'][id]['use']
         if use == 'left_trig':
             lefttrig = pin
-        else if use == 'left_echo':
+        elif use == 'left_echo':
             leftecho = pin
-        else if use == 'right_trig':
+        elif use == 'right_trig':
             righttrig = pin
-        else if use == 'right_echo':
+        elif use == 'right_echo':
             rightecho = pin
         
     
