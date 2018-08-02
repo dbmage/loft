@@ -7,10 +7,6 @@ import os
 import re
 from math import pi
 
-try:
-    bucketheight
-except NameError:
-    exit()
     
 sys.path.append('/usr/sbin/loft/bottle/etc')
 
