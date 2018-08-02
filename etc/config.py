@@ -14,7 +14,7 @@ setup = {
             "Description" : "Mains valve to buckets",
             "Name" : "GPIO. 7",
             "Wpi" : "7",
-            "Mode" : 1,
+            "Mode" : 0, # 0 = out, 1 = in
             "BCM" : "4",
             "physical" : "7",
         },
@@ -23,7 +23,7 @@ setup = {
             "Description" : "Controls mains power to big bathroom lights",
             "Name" : "SCL.1",
             "Wpi" : "9",
-            "Mode" : 1,
+            "Mode" : 0,
             "BCM" : "3",
             "physical" : "5",
         },
@@ -32,7 +32,7 @@ setup = {
             "Description" : "Possibly unlocks the doors",
             "Name" : "SDA.1",
             "Wpi" : "8",
-            "Mode" : 1,
+            "Mode" : 0,
             "BCM" : "2",
             "physical" : "3",
         },
@@ -41,7 +41,7 @@ setup = {
             "Description" : "Controls mains power to pumps",
             "Name" : "GPIO. 0",
             "Wpi" : "0",
-            "Mode" : 1,
+            "Mode" : 0,
             "BCM" : "17",
             "physical" : "11",
         },
@@ -50,7 +50,7 @@ setup = {
             "Description" : "overrides pump flow switch (which pump)",
             "Name" : "CE0",
             "Wpi" : "10",
-            "Mode" : 1,
+            "Mode" : 0,
             "BCM" : "8",
             "physical" : "24",
         },
@@ -97,6 +97,10 @@ setup = {
         "bottom"  : "28-0115818d1bff", #originally labelled middle
         "bucket1" : "28-011581c830ff",
         "bucket2" : "28-021581de70ff"
+    },
+    "modes" : {
+        0 : "GPIO.OUT",
+        1 : "GPIO.IN"
     },
     "operations" : {
         "on" : 1,
