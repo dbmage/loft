@@ -126,6 +126,15 @@ setup = {
         "bucket1" : "28-011581c830ff",
         "bucket2" : "28-021581de70ff"
     },
+    "buckets" : {
+        'left' : {
+            'trig' : '',
+            'echo' : '',
+        },
+        'right' : {
+            'trig' : '',
+            'echo' : '',            
+        }
     "modes" : {
         0 : "GPIO.OUT",
         1 : "GPIO.IN"
