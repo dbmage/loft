@@ -7,6 +7,11 @@ import os
 import re
 from math import pi
 
+try:
+    bucketheight
+except NameError:
+    exit()
+    
 sys.path.append('/usr/sbin/loft/bottle/etc')
 
 import config as cfg
@@ -16,32 +21,27 @@ log = cfg.log
 setup = cfg.setup
 GPIO.setmode(GPIO.BCM)
 #GPIO.setwarnings(False)
-
-for id in cfg.setup['pins']:
-    print(cfg.setup['pins'][id]['Configured'])
-    if cfg.setup['pins'][id]['Configured'] == True:
-        continue
-    
-    pin = cfg.setup['pins'][id]['BCM']
-    mode = cfg.setup['pins'][id]['Mode']
-    use = cfg.setup['pins'][id]['Use']
-    print("Pin: %s\tUse: %s\tMode: %s (%s)" % (pin, use, cfg.setup['modes'][mode], mode))
-    if use == 'left_trig':
-        cfg.setup['buckets']['left']['trig'] = pin
-    elif use == 'left_echo':
-        cfg.setup['buckets']['left']['echo'] = pin
-    elif use == 'right_trig':
-        cfg.setup['buckets']['right']['trig'] = pin
-    elif use == 'right_echo':
-        cfg.setup['buckets']['right']['echo'] = pin
-    
-    #if GPIO.gpio_function(pin) == mode:
-        #print("%s was already set to %s" % (pin, cfg.setup['modes'][mode]))
-        #continue
-    print("Setting up %s to %s mode" % (pin, cfg.setup['modes'][mode]))
-    GPIO.setup(pin, mode)
-    cfg.setup['pins'][id]['Configured'] = True
-    print(cfg.setup['pins'][id]['Configured'])
+def pinSetup():
+    for id in cfg.setup['pins']:
+        
+        pin = cfg.setup['pins'][id]['BCM']
+        mode = cfg.setup['pins'][id]['Mode']
+        use = cfg.setup['pins'][id]['Use']
+        print("Pin: %s\tUse: %s\tMode: %s (%s)" % (pin, use, cfg.setup['modes'][mode], mode))
+        if use == 'left_trig':
+            cfg.setup['buckets']['left']['trig'] = pin
+        elif use == 'left_echo':
+            cfg.setup['buckets']['left']['echo'] = pin
+        elif use == 'right_trig':
+            cfg.setup['buckets']['right']['trig'] = pin
+        elif use == 'right_echo':
+            cfg.setup['buckets']['right']['echo'] = pin
+        
+        #if GPIO.gpio_function(pin) == mode:
+            #print("%s was already set to %s" % (pin, cfg.setup['modes'][mode]))
+            #continue
+        print("Setting up %s to %s mode" % (pin, cfg.setup['modes'][mode]))
+        GPIO.setup(pin, mode)
 
 def getstate( relay ):
     pin = cfg.pins[relay]
