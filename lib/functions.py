@@ -20,6 +20,7 @@ for id in cfg.setup['pins']:
     pin = cfg.setup['pins'][id]['BCM']
     mode = cfg.setup['pins'][id]['Mode']
     use = cfg.setup['pins'][id]['Use']
+    print("Pin: %s\nUse: %s\nMode: %s (%s)" % (pin, use, cfg.setup['modes'][mode], mode))
     if use == 'left_trig':
         cfg.setup['buckets']['left']['trig'] = pin
     elif use == 'left_echo':
@@ -30,7 +31,9 @@ for id in cfg.setup['pins']:
         cfg.setup['buckets']['right']['echo'] = pin
     
     if GPIO.gpio_function(pin) == mode:
+        print("%s was already set to %s" % (pin, cfg.setup['modes'][mode]))
         continue
+    print("Setting up %s to %s mode" % (pin, cfg.setup['modes'][mode]))
     GPIO.setup(pin, cfg.setup['modes'][mode])
 
 def getstate( relay ):
