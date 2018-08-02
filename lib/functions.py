@@ -34,7 +34,7 @@ for id in cfg.setup['pins']:
         #print("%s was already set to %s" % (pin, cfg.setup['modes'][mode]))
         #continue
     print("Setting up %s to %s mode" % (pin, cfg.setup['modes'][mode]))
-    GPIO.setup(pin, cfg.setup['modes'][mode])
+    GPIO.setup(pin, mode)
 
 def getstate( relay ):
     pin = cfg.pins[relay]
@@ -153,9 +153,8 @@ def getbucketlevels( trigger, echo ):
 
     while GPIO.input(echo)==0:
         start = time.time()
-#        if time.time() > cfg.timeout:
-#            print "Start: %s\nNow: %s\nTIMEOUT" % (start, time.time())
-#            return "0"
+       if time.time() > cfg.setup['timeout']:
+           return "0"
 
     while GPIO.input(echo)==1:
         stop = time.time()
