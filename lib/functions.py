@@ -30,9 +30,9 @@ for id in cfg.setup['pins']:
     elif use == 'right_echo':
         cfg.setup['buckets']['right']['echo'] = pin
     
-    if GPIO.gpio_function(pin) == mode:
-        print("%s was already set to %s" % (pin, cfg.setup['modes'][mode]))
-        continue
+    #if GPIO.gpio_function(pin) == mode:
+        #print("%s was already set to %s" % (pin, cfg.setup['modes'][mode]))
+        #continue
     print("Setting up %s to %s mode" % (pin, cfg.setup['modes'][mode]))
     GPIO.setup(pin, cfg.setup['modes'][mode])
 
