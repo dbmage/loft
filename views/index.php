@@ -124,5 +124,3 @@ $linkip = (empty($_SERVER['HTTP_X_FORWARDED_FOR'])) ? "http://192.168.0.2/mon" :
 <img src="/img/vcss" alt="Valid CSS!"></a>
 </body>
 </html>
-
-
