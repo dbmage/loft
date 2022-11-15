@@ -136,7 +136,7 @@ def ram_b_to_mb(config, item):
     while item > 1024:
         item = item / 1024
         count = count + 1
-    item = item + ' ' + config.units['memory'][count]
+    item = "%s %s" % (item, config.units['memory'][count])
     return item
 
 #def getbucketlevels( i ):
