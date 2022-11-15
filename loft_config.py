@@ -6,6 +6,7 @@ import logging as log
 import json
 import base64
 import MySQLdb
+from RPi import GPIO
 
 
 class Config():
@@ -22,10 +23,10 @@ class Config():
         }
         self.log_file = "/var/log/bucket"
         self.modes = {
-            '0': "GPIO.OUT",
-            '1': "GPIO.IN",
-            'pullup': 'GPIO.PUD_UP',
-            'pulldown': 'GPIO.PUD_DOWN'
+            '0': GPIO.OUT,
+            '1': GPIO.IN,
+            'pullup': GPIO.PUD_UP,
+            'pulldown': GPIO.PUD_DOWN
         }
         self.operations = {
             "on": 1,
