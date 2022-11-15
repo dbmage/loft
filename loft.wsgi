@@ -20,7 +20,7 @@ logspec = { "filename" : "loft-api-error.log",
 
 Logger.init('/var/log/',  termSpecs={"level" : 60}, fileSpecs=[logspec])
 __builtins__['log'] = log
-functions.setup_pins(config)
+functions.pin_setup(config)
 
 def ret_http(retcode, data=None):
     """Return a HTTP Response with code and data."""
