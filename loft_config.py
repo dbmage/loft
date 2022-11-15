@@ -92,7 +92,7 @@ class Config():
             db_conn = MySQLdb.connect(
                 host="alien.home",
                 user="naruto",
-                passwd=base64.b64decode('eXN0OTQq'),
+                passwd=base64.b64decode('eXN0OTQq').decode('utf-8'),
                 db="Denham"
             )
         except MySQLdb.Error as mys_err:
