@@ -52,6 +52,7 @@ class Config():
                 pins = json.loads(pin_fh.read())
         except ValueError as error:
             log.error('Config file has invalid format: %s', error)
+            sys.exit(1)
         except FileNotFoundError:
             log.critical("Config file pins.json does not exist")
             sys.exit(1)
