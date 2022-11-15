@@ -16,11 +16,11 @@ def pin_setup(config):
         pin = pin_data['BCM']
         mode = str(pin_data['Mode'])
         use = pin_data['Use']
-        log.info("[%s] Use: %-10s Mode: %-8s (%s)", pin, use, config.modes[mode], mode)
+        log.info("[%s] Use: %-10s Mode: %s (%s)", pin, use, config.modes[mode], mode)
         if mode not in config.modes:
             log.error("[%s] Pin incorrectly setup", pin)
             continue
-        log.info("[%s] Setting up %-10s to %-8s mode", pin, use, config.modes[mode])
+        log.info("[%s] Setting up %-10s to %s mode", pin, use, config.modes[mode])
         if config.modes[mode] > 1:
             GPIO.setup(pin, GPIO.IN, pull_up_down=config.modes[mode])
             continue
