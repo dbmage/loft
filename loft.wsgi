@@ -1,11 +1,13 @@
 """Loft control app."""
 #!/usr/bin/python3
 import os
+import sys
 import json
 import socket
 import logging as log
 from lazylog import Logger
 import bottle
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 import functions
 from loft_config import Config
 
