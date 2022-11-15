@@ -8,7 +8,7 @@
             "Mode" : 0,
             "BCM" : 2,
             "Physical" : 3,
-            "Configured" : true,
+            "Configured" : true
         },
         "2": {
             "Use" : "hot_max",
@@ -18,7 +18,7 @@
             "Mode" : 1,
             "BCM" : 3,
             "Physical" : 5,
-            "Configured" : true,
+            "Configured" : true
         },
         "3": {
             "Use" : "relay_3",
@@ -28,47 +28,47 @@
             "Mode" : 1,
             "BCM" : 4,
             "Physical" : 7,
-            "Configured" : false,
+            "Configured" : false
         },
         "4": {
             "Use" : "cold_valve",
             "Description" : "Cold water buckets valve",
             "Name" : "GPIO. 0",
             "Wpi" : 0,
-            "Mode" : 1,
+            "Mode" : 0,
             "BCM" : 17,
             "Physical" : 11,
-            "Configured" : true,
+            "Configured" : true
         },
         "5": {
             "Use" : "hot_valve",
             "Description" : "Hot water bucket valve",
             "Name" : "GPIO. 2",
             "Wpi" : 2,
-            "Mode" : 1,
+            "Mode" : 0,
             "BCM" : 27,
             "Physical" : 13,
-            "Configured" : true,
+            "Configured" : true
         },
         "6" : {
             "Use" : "hot_echo",
             "Description" : "How water bucket echo pin",
             "Name" : "GPIO. 3",
             "Wpi" : 3,
-            "Mode" : 1,
+            "Mode" : 0,
             "BCM" : 22,
             "Physical" : 15,
-            "Configured" : true,
+            "Configured" : true
         },
         "7" : {
             "Use" : "hot_trigger",
             "Description" : "Hot water bucker trigger pin",
             "Name" : "TxD",
             "Wpi" : 15,
-            "Mode" : 0,
+            "Mode" : 1,
             "BCM" : 14,
             "Physical" : 8,
-            "Configured" : true,
+            "Configured" : true
         },
         "8" : {
             "Use" : "temp_sensor_data",
@@ -78,7 +78,7 @@
             "Mode" : "pullup",
             "BCM" : 23,
             "Physical" : 16,
-            "Configured" : false,
+            "Configured" : false
         },
         "9" : {
             "Use" : "main_shower",
@@ -88,7 +88,7 @@
             "Mode" : "pullup",
             "BCM" : 24,
             "Physical" : 18,
-            "Configured" : true,
+            "Configured" : true
         },
         "10" : {
             "Use" : "master_shower",
@@ -98,7 +98,7 @@
             "Mode" : "pullup",
             "BCM" : 25,
             "Physical" : 22,
-            "Configured" : true,
+            "Configured" : true
         },
         "11" : {
             "Use" : "small_shower",
@@ -108,7 +108,7 @@
             "Mode" : "pullup",
             "BCM" : 8,
             "Physical" : 24,
-            "Configured" : true,
+            "Configured" : true
         }
     },
     "sensors" : {
@@ -123,11 +123,11 @@
     "buckets" : {
         "cold" : {
             "trig" : null,
-            "echo" : null,
+            "echo" : null
         },
         "hot" : {
             "trig" : 14,
-            "echo" : 22,
+            "echo" : 22
         }
     }
 }
