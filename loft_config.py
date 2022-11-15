@@ -48,7 +48,7 @@ class Config():
         """get pin configuration from json and initialise pins."""
         localdir = os.path.dirname(os.path.realpath(__file__))
         try:
-            with open("%spins.json" % (localdir), 'r', encoding='utf-8') as pin_fh:
+            with open("%s/pins.json" % (localdir), 'r', encoding='utf-8') as pin_fh:
                 pins = json.loads(pin_fh.read())
         except ValueError as error:
             log.error('Config file has invalid format: %s', error)
