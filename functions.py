@@ -30,12 +30,12 @@ def pin_setup(config):
 def get_state(config, thing):
     """Get a thing state."""
     try:
-        pin_temp = int(pin)
+        _pin_temp = int(thing)
     except ValueError:
         for pin_id, pin_data in config.pins.items():
-            if pin != pin_data['Use']:
+            if thing != pin_data['Use']:
                 continue
-            pin = pin_id
+            thing = pin_id
     pin = config.pins[thing]['BCM']
     try:
         state = GPIO.input(pin)
