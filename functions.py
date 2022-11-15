@@ -21,6 +21,9 @@ def pin_setup(config):
             log.error("[%s] Pin incorrectly setup", pin)
             continue
         log.info("[%s] Setting up %-10s to %-8s mode", pin, use, config.modes[mode])
+        if config.modes[mode] > 1:
+            GPIO.setup(pin, GPIO.IN, pull_up_down=config.modes[mode])
+            continue
         GPIO.setup(pin, config.modes[mode])
 
 
