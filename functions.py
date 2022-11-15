@@ -14,7 +14,7 @@ def pin_setup(config):
     """Setup pins for use with Python."""
     for _pin_id, pin_data in config.pins.items():
         pin = pin_data['BCM']
-        mode = pin_data['Mode']
+        mode = str(pin_data['Mode'])
         use = pin_data['Use']
         log.info("[%s] Use: %-10s Mode: %-8s (%s)", pin, use, config.modes[mode], mode)
         if mode not in config.modes:
