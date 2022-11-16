@@ -55,7 +55,7 @@ def index():
     myapproutes = "<br>".join(functions.get_all_routes(os.path.realpath(__file__)))
     #print myapproutes
     return (
-        '<h2>Online  <img src="http://192.168.0.2/img/online.png" width="20px"></h2>\n'
+        '<h2>Online  <img src="on.png" width="20px"></h2>\n'
         '<h3>Requests processed: ' + str(config.requests) + '<h3>\n'
         '<br>\n'
         '<h3>Process ID: ' + str(pid) + ' </h3>\n'
