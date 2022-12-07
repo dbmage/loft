@@ -55,7 +55,7 @@ def index():
     myapproutes = "<br>".join(functions.get_all_routes(os.path.realpath(__file__)))
     #print myapproutes
     return (
-        '<h2>Online  <img src="http://192.168.0.2/img/online.png" width="20px"></h2>\n'
+        '<h2>Online  <img src="http://192.168.0.101/on.png" width="20px"></h2>\n'
         '<h3>Requests processed: ' + str(config.requests) + '<h3>\n'
         '<br>\n'
         '<h3>Process ID: ' + str(pid) + ' </h3>\n'
@@ -167,7 +167,8 @@ def get_level(bucket):
     """Retrieve level for specified bucket."""
     config.requests += 1
     if bucket not in config.buckets:
-        return ret_error(data={'error': "%s not found" % (bucket)})
+        return ret_ok(data=1.00)
+        # return ret_error(data={'error': "%s not found" % (bucket)})
     return ret_ok(
         data=functions.get_bucket_levels(config, config.buckets[bucket]['trig'], config.buckets[bucket]['echo'])
     )
@@ -178,8 +179,10 @@ def get_levels():
     """Retrieve all bucket levels."""
     config.requests += 1
     levels = {
-        'left': functions.get_bucket_levels(config, config.buckets['left']['trig'], config.buckets['left']['echo']),
-        'right': functions.get_bucket_levels(config, config.buckets['right']['trig'], config.buckets['right']['echo'])
+        'left': 0,
+        'right': 0
+        # 'left': functions.get_bucket_levels(config, config.buckets['left']['trig'], config.buckets['left']['echo']),
+        # 'right': functions.get_bucket_levels(config, config.buckets['right']['trig'], config.buckets['right']['echo'])
     }
     return ret_ok(data=levels)
 

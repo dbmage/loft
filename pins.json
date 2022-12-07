@@ -111,6 +111,36 @@
             "Configured" : true
         },
         "12" : {
+            "Use" : "max_sensor_1",
+            "Description" : "none",
+            "Name" : "MISO",
+            "Wpi" : 13,
+            "Mode" : 1,
+            "BCM" : 9,
+            "Physical" : 21,
+            "Configured" : false
+        },
+        "13" : {
+            "Use" : "max_sesnor_2",
+            "Description" : "none",
+            "Name" : "MOSI",
+            "Wpi" : 12,
+            "Mode" : 1,
+            "BCM" : 10,
+            "Physical" : 19,
+            "Configured" : false
+        },
+        "14" : {
+            "Use" : "right_max",
+            "Description" : "Right bucket max level sensor",
+            "Name" : "SCLK",
+            "Wpi" : 14,
+            "Mode" : 1,
+            "BCM" : 11,
+            "Physical" : 23,
+            "Configured" : true
+        },
+        "15": {
             "Use" : "valve_negative_1",
             "Description" : "Valve Negative 1",
             "Name" : "GPIO.28",
@@ -120,7 +150,7 @@
             "Physical" : 38,
             "Configured" : true
         },
-        "13" : {
+        "16" : {
             "Use" : "valve_negative_2",
             "Description" : "Valve Negative 2",
             "Name" : "GPIO.29",
