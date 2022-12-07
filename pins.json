@@ -31,23 +31,23 @@
             "Configured" : false
         },
         "4": {
-            "Use" : "cold_valve",
-            "Description" : "Cold water buckets valve",
-            "Name" : "GPIO. 0",
-            "Wpi" : 0,
+            "Use" : "hot_valve_pos",
+            "Description" : "Hot water bucket valve",
+            "Name" : "GPIO. 25",
+            "Wpi" : 25,
             "Mode" : 0,
-            "BCM" : 17,
-            "Physical" : 11,
+            "BCM" : 26,
+            "Physical" : 37,
             "Configured" : true
         },
         "5": {
-            "Use" : "hot_valve",
-            "Description" : "Hot water bucket valve",
-            "Name" : "GPIO. 2",
-            "Wpi" : 2,
+            "Use" : "cold_valve_pos",
+            "Description" : "Cold water buckets valve",
+            "Name" : "GPIO. 27",
+            "Wpi" : 27,
             "Mode" : 0,
-            "BCM" : 27,
-            "Physical" : 13,
+            "BCM" : 16,
+            "Physical" : 36,
             "Configured" : true
         },
         "6" : {
@@ -109,6 +109,26 @@
             "BCM" : 8,
             "Physical" : 24,
             "Configured" : true
+        },
+        "12" : {
+            "Use" : "valve_negative_1",
+            "Description" : "Valve Negative 1",
+            "Name" : "GPIO.28",
+            "Wpi" : 28,
+            "Mode" : 0,
+            "BCM" : 20,
+            "Physical" : 38,
+            "Configured" : true
+        },
+        "13" : {
+            "Use" : "valve_negative_2",
+            "Description" : "Valve Negative 2",
+            "Name" : "GPIO.29",
+            "Wpi" : 29,
+            "Mode" : 0,
+            "BCM" : 21,
+            "Physical" : 40,
+            "Configured" : true
         }
     },
     "sensors" : {
@@ -119,6 +139,10 @@
         "bucket2" : "28-021581de70ff",
         "master" : "28-041685ac8fff",
         "upstairs" : "28-041685b753ff"
+    },
+    "valves" : {
+        "on": "open",
+        "off": "closed"
     },
     "buckets" : {
         "cold" : {
